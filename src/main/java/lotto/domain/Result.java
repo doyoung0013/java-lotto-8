@@ -15,5 +15,10 @@ public class Result {
     public double getProfitRate() {
         return profitRate;
     }
+
+	public Map<Rank, Integer> getResultMap() {
+		return resultMap;
+	}
+    
     
 }
