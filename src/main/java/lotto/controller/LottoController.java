@@ -1,8 +1,12 @@
 package lotto.controller;
 
+import java.util.List;
+
+import lotto.domain.Lotto;
 import lotto.domain.Result;
 import lotto.service.LottoService;
 import lotto.view.InputView;
+import lotto.view.OutputView;
 
 public class LottoController {
 	
@@ -10,7 +14,8 @@ public class LottoController {
 	
 	public void run() {
 		int purchaseAmount = InputView.inputPurchaseAmount();
-		Result result = lottoService.play(purchaseAmount);
+		List<Lotto> issueLottos = lottoService.issueLottos(purchaseAmount);
+		OutputView.printIssueLottos(issueLottos);
 		
 	}
 
