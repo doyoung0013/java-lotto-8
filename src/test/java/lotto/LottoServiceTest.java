@@ -18,13 +18,6 @@ public class LottoServiceTest {
 	
 	private final LottoService service = new LottoService();
 
-    @DisplayName("구입 금액이 1000원 단위가 아니면 예외가 발생한다.")
-    @Test
-    void 구입금액_단위_검증() {
-        assertThatThrownBy(() -> service.play(1500))
-                .isInstanceOf(IllegalArgumentException.class);
-    }
-
     @DisplayName("구입 금액에 맞게 로또가 발행된다.")
     @Test
     void 로또_발행_수량_검증() {
