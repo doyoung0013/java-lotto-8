@@ -3,6 +3,7 @@ package lotto.view;
 import java.util.List;
 
 import lotto.domain.Lotto;
+import lotto.domain.Result;
 
 public class OutputView {
 
@@ -13,6 +14,11 @@ public class OutputView {
             System.out.println(lotto.getNumbers());
         }
         
+	}
+
+	public static void printResult(Result result) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -20,6 +20,9 @@ public class LottoController {
 		OutputView.printIssueLottos(issueLottos);
 		
 		WinningNumbers winningNumbers = InputView.inputWinningNumbers();
+		Result result = lottoService.calculateWinningResult(issueLottos, winningNumbers);
+		OutputView.printResult(result);
+		
 	}
 
 }
