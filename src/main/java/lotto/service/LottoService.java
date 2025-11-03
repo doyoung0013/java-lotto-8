@@ -1,6 +1,7 @@
 package lotto.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
@@ -14,15 +15,18 @@ import lotto.domain.WinningNumbers;
 public class LottoService {
 	
 	public List<Lotto> issueLottos(int purchaseAmount) {
-		
-        int count = purchaseAmount / 1000;
-        List<Lotto> lottos = new ArrayList<>();
+	    int count = purchaseAmount / 1000;
+	    List<Lotto> lottos = new ArrayList<>();
 
-        for (int i = 0; i < count; i++) {
-            lottos.add(new Lotto(Randoms.pickUniqueNumbersInRange(1, 45, 6)));
-        }
-        return lottos;
-    }
+	    for (int i = 0; i < count; i++) {
+	        List<Integer> numbers = new ArrayList<>(Randoms.pickUniqueNumbersInRange(1, 45, 6)); // ✅ 복사
+	        Collections.sort(numbers);
+	        lottos.add(new Lotto(numbers));
+	    }
+
+	    return lottos;
+	}
+
 
 	public Result calculateWinningResult(List<Lotto> issueLottos, WinningNumbers winningNumbers) {
 		
